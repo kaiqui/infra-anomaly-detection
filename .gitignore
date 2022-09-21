@@ -6,9 +6,6 @@ __pycache__/
 # C extensions
 *.so
 
-.docker-compose-base.yml
-.DockerfileCelery
-.DockerfileFastAPI
 
 # Distribution / packaging
 .Python
@@ -131,3 +128,18 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# others files
+docker-compose-base.yml
+DockerfileCelery
+DockerfileFastAPI
+*.pkl
+test.db
+app/celery.sqlite
+app/logs.log
+logs.log
+anomaly.ipynb
+app/aipo/__pycache__/
+app/endpoint/__pycache__/
+app/models/__pycache__/
+app/task/__pycache__/

@@ -1,0 +1,9 @@
+FROM python:3.9
+
+COPY requirements_aipo.txt /requirements_aipo.txt
+RUN pip install -r /requirements_aipo.txt
+
+COPY ./aipo /celery_tasks
+WORKDIR /celery_tasks
+
+ENTRYPOINT celery -A aipo worker -l INFO

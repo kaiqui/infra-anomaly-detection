@@ -1,0 +1,10 @@
+pandas
+fastapi
+python-dotenv
+pydantic
+pycaret
+celery
+flower
+aiohttp
+cerberus
+uvicorn

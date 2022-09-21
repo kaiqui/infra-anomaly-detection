@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus-anomaly
+    hostname: prometheus
+    restart: unless-stopped
+    volumes:
+      - ./prom/config/:/etc/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    ports:
+      - 9090:9090
+    networks:
+      - metrics
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana-anomaly
+    hostname: grafana
+    environment:
+      -  GF_SECURITY_ADMIN_PASSWORD=kailima
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    networks:
+      - metrics
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq-anomaly
+    hostname: rabbitmq
+    ports:
+        - 5672:5672
+        - 15672:15672
+    networks:
+        - metrics
+
+networks:
+  metrics:
+    driver: bridge

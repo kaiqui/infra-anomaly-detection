@@ -6,9 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
-docker-compose-base.yml
-DockerfileCelery
-DockerfileFastAPI
+.docker-compose-base.yml
+.DockerfileCelery
+.DockerfileFastAPI
 
 # Distribution / packaging
 .Python
